@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    div.inner
+        h2 #{title}
+        div.map
+            div.autocomplete
+                input(type="text" placeholder="Search for anything" name="geolocate")
+            #map
+                p Loading Map...
+
+    

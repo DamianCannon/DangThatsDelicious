@@ -1,0 +1,20 @@
+extends layout
+
+include mixins/_storeCard
+
+block content
+    div.inner
+        h2 #{type || 'Tags'}
+
+        if tags
+            ul.tags
+                each tag in tags
+                    li.tag
+                        a.tag__link(href=`/tags/${tag._id}` class=(tag._id === type ? 'tag__link--active' : ''))
+                            span.tag__text #{tag._id}
+                            span.tag__count #{tag.count}
+
+
+    div.stores
+        each store in stores
+            +storeCard(store)
